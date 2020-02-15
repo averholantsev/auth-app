@@ -185,7 +185,7 @@ class AuthForm extends Component<IProps, IState> {
         .then(response => {
           console.log(response.data);
           this.props.onAuthAccepted(response.data.jwt);
-          this.props.history.push("/next-page");
+          this.props.history.push("/auth-app/next-page");
         })
         .catch(error => {
           if (error.response.status === 401) {
