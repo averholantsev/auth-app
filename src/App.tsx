@@ -7,8 +7,8 @@ import NextPage from "./containers/NextPage";
 const App = () => {
   return (
     <div className="App">
-      <Route path="/" exact component={AuthForm} />
-      <Route path="/next-page" exact component={NextPage} />
+      <Route path="/auth-app/" exact component={AuthForm} />
+      <Route path="/auth-app/next-page" exact component={NextPage} />
     </div>
   );
 };
