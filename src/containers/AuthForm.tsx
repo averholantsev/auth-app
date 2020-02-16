@@ -118,8 +118,8 @@ class AuthForm extends Component<IProps, IState> {
       password: false
     },
     fieldValidationErrors: {
-      email: "",
-      password: ""
+      email: "Обязательное поле!",
+      password: "Обязательное поле!"
     },
     willSend: true,
     resError: false,
