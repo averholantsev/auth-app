@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import axios from "../axios-main";
 
-import lockIcon from "../components/UI/Icons/icon.png";
+import lockIcon from "../components/UI/Icons/icon.svg";
 import AuthInput from "../components/AuthComponents/AuthInput";
 import AuthButton from "../components/AuthComponents/AuthButton";
 import AuthCheckbox from "../components/AuthComponents/AuthCheckbox";
@@ -27,8 +27,18 @@ const Container = styled.div`
 `;
 
 const LockIconContainer = styled.div`
+  position: inherit;
   padding-top: 72px;
   padding-bottom: 15px;
+
+  .roundIcon {
+    background-color: #e10050;
+    border-radius: 100%;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+  }
 `;
 
 const AuthHeader = styled.h1`
@@ -194,9 +204,11 @@ class AuthForm extends Component<IProps, IState> {
               errorMessage:
                 "Ошибка авторизации, проверьте данные и повторите попытку"
             });
-          } else this.setState({
+          } else
+            this.setState({
               resError: true,
-              errorMessage: "Произошла ошибка, попробуйте повторите попытку позднее"
+              errorMessage:
+                "Произошла ошибка, попробуйте повторите попытку позднее"
             });
         });
     } else {
@@ -218,7 +230,9 @@ class AuthForm extends Component<IProps, IState> {
       <Container>
         <form>
           <LockIconContainer>
-            <img src={lockIcon} alt="auth-lock" />
+            <div className="roundIcon">
+              <img src={lockIcon} alt="auth-lock" />
+            </div>
           </LockIconContainer>
           <AuthHeader>Вход в аккаунт</AuthHeader>
           {this.state.resError ? (
