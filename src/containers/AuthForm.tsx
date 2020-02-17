@@ -84,10 +84,6 @@ const Copyright = styled.p`
   line-height: 18px;
   letter-spacing: 0.16px;
   color: rgba(0, 0, 0, 0.54);
-
-  @media (max-width: 375px) {
-    display: none;
-  }
 `;
 
 // Типы данных
@@ -189,11 +185,9 @@ class AuthForm extends Component<IProps, IState> {
 
     if (this.state.validateFields.email && this.state.validateFields.password) {
       this.setState({ willSend: true });
-      console.log("Отправляем на сервер данные");
       axios
         .post("/314145ed-4ccd-46fd-a1f9-f5b83468e714", dataToServer)
         .then(response => {
-          console.log(response.data);
           this.props.onAuthAccepted(response.data.jwt);
           this.props.history.push("/auth-app/next-page");
         })
@@ -241,7 +235,7 @@ class AuthForm extends Component<IProps, IState> {
           <AuthInput
             key="email"
             id="email"
-            label="Почта*"
+            label="Почта"
             name="email"
             error={emailError}
             helperText={
@@ -254,7 +248,7 @@ class AuthForm extends Component<IProps, IState> {
             key="password"
             id="password"
             type="password"
-            label="Пароль*"
+            label="Пароль"
             name="password"
             error={passwordError}
             helperText={
