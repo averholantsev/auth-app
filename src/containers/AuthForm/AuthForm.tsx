@@ -65,12 +65,18 @@ class AuthForm extends Component<IProps, IState> {
   };
 
   //Функция для обновления состояния полей ввода
-  inputHandler = (event: any) => {
+  inputHandler = (event: any): void => {
     const name: StateKeys = event.target.name;
     const value: string = event.target.value;
-    const reg = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
+    this.validation(name, value);
 
-    //Валидация
+    //Обновление State значения почты или пароля
+    this.setState({ [name]: value });
+  };
+
+  //Валидация
+  validation = (name: string, value: string): void => {
+    const reg = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
     let validateFieldsUpdate = { ...this.state.validateFields };
     let fieldValidationErrors = { ...this.state.fieldValidationErrors };
     switch (name) {
@@ -95,20 +101,17 @@ class AuthForm extends Component<IProps, IState> {
       validateFields: validateFieldsUpdate,
       fieldValidationErrors: fieldValidationErrors
     });
-
-    //Обновление State значения почты или пароля
-    this.setState({ [name]: value });
   };
 
   //Функция для обновления состояния чекбокса
-  checkboxHandler = () => {
+  checkboxHandler = (): void => {
     let checkbox: boolean = this.state.rememberMe;
 
     this.setState({ rememberMe: !checkbox });
   };
 
   //Проверка валидности формы
-  formValidate = () => {
+  formValidate = (): void => {
     const dataToServer = {
       email: this.state.email,
       password: this.state.password,
