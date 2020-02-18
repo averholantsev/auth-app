@@ -17,15 +17,15 @@ export const LockIconContainer = styled.div`
   position: inherit;
   padding-top: 72px;
   padding-bottom: 15px;
+`;
 
-  .roundIcon {
-    background-color: #e10050;
-    border-radius: 100%;
-    display: block;
-    width: 40px;
-    height: 40px;
-    margin: 0 auto;
-  }
+export const RoundIcon = styled.div`
+  background-color: #e10050;
+  border-radius: 100%;
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
 `;
 
 export const AuthHeader = styled.h1`

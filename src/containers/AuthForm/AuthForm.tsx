@@ -5,6 +5,7 @@ import axios from "../../axios-main";
 import {
   Container,
   LockIconContainer,
+  RoundIcon,
   AuthHeader,
   LinkContainer,
   LeftLink,
@@ -161,9 +162,9 @@ class AuthForm extends Component<IProps, IState> {
       <Container>
         <form>
           <LockIconContainer>
-            <div className="roundIcon">
+            <RoundIcon>
               <img src={lockIcon} alt="auth-lock" />
-            </div>
+            </RoundIcon>
           </LockIconContainer>
           <AuthHeader>Вход в аккаунт</AuthHeader>
           {this.state.resError ? (
