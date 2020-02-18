@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "01ca691fe41b50d04e8a93b8349a8688",
+    "revision": "4e2c89d8b9df6f7545395f6946a9c6b0",
     "url": "/auth-app/index.html"
   },
   {
-    "revision": "08ae0b1c59ea12962a05",
+    "revision": "3854e9a36e82b37d2a02",
     "url": "/auth-app/static/css/main.bc2643f6.chunk.css"
   },
   {
-    "revision": "a229d1d8ed2ee3a73fb2",
-    "url": "/auth-app/static/js/2.f0822bef.chunk.js"
+    "revision": "e87957aee7a49ab09922",
+    "url": "/auth-app/static/js/2.46ed37b5.chunk.js"
   },
   {
     "revision": "3adc01bea76e7956dc3633ee898f6936",
-    "url": "/auth-app/static/js/2.f0822bef.chunk.js.LICENSE.txt"
+    "url": "/auth-app/static/js/2.46ed37b5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "08ae0b1c59ea12962a05",
-    "url": "/auth-app/static/js/main.0c480302.chunk.js"
+    "revision": "3854e9a36e82b37d2a02",
+    "url": "/auth-app/static/js/main.bc66902a.chunk.js"
   },
   {
     "revision": "fc4a5eeca769cf1dbb63",
