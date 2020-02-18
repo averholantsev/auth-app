@@ -204,10 +204,10 @@ class AuthForm extends Component<IProps, IState> {
           />
           <AuthButton onClick={this.formSenderHandler}>Войти в аккаунт</AuthButton>
           <LinkContainer>
-            <LeftLink key="remember" className="remember" href="/#">
+            <LeftLink href="/#">
               Забыли пароль?
             </LeftLink>
-            <RightLink key="register" className="register" href="/#">
+            <RightLink href="/#">
               Ещё нет аккаунта? Регистрация
             </RightLink>
           </LinkContainer>
