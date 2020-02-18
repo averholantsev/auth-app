@@ -202,14 +202,12 @@ class AuthForm extends Component<IProps, IState> {
             onChange={this.checkboxHandler}
             checked={this.state.rememberMe}
           />
-          <AuthButton onClick={this.formSenderHandler}>Войти в аккаунт</AuthButton>
+          <AuthButton onClick={this.formSenderHandler}>
+            Войти в аккаунт
+          </AuthButton>
           <LinkContainer>
-            <LeftLink href="/#">
-              Забыли пароль?
-            </LeftLink>
-            <RightLink href="/#">
-              Ещё нет аккаунта? Регистрация
-            </RightLink>
+            <LeftLink href="/#">Забыли пароль?</LeftLink>
+            <RightLink href="/#">Ещё нет аккаунта? Регистрация</RightLink>
           </LinkContainer>
           <Copyright>Copyright© Ваш сайт 2019.</Copyright>
         </form>
