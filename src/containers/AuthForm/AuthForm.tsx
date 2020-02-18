@@ -233,6 +233,7 @@ class AuthForm extends Component<IProps, IState> {
   }
 }
 
+//Использование Redux
 const mapDispatchToProps = (dispatch: any) => {
   return {
     onAuthAccepted: (id: string) => dispatch({ type: JWT_AUTH, jwt: id })
