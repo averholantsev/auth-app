@@ -2,54 +2,17 @@ import React, { Component } from "react";
 import { Typography, Link } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import { connect } from "react-redux";
-import styled from "styled-components";
-import axios from "../axios-main";
 
-import lockIcon from "../components/UI/Icons/icon.svg";
-import AuthInput from "../components/AuthComponents/AuthInput";
-import AuthButton from "../components/AuthComponents/AuthButton";
-import AuthCheckbox from "../components/AuthComponents/AuthCheckbox";
-import CSSAlert from "../components/AuthComponents/AuthAlert";
-import { JWT_AUTH } from "../store/reducer";
+import axios from "../../axios-main";
+import { Container, LockIconContainer, AuthHeader, Copyright } from './AuthFormStyles'
+import lockIcon from "../../components/UI/Icons/icon.svg";
+import AuthInput from "../../components/AuthComponents/AuthInput";
+import AuthButton from "../../components/AuthComponents/AuthButton";
+import AuthCheckbox from "../../components/AuthComponents/AuthCheckbox";
+import CSSAlert from "../../components/AuthComponents/AuthAlert";
+import { JWT_AUTH } from "../../store/reducer";
 
 // Стили
-const Container = styled.div`
-  display: flex;
-  margin: 0 auto;
-  margin-top: 10%;
-  padding: 0 28px;
-
-  @media (min-width: 390px) {
-    width: 380px;
-    padding: 0;
-    margin-top: 5%;
-  }
-`;
-
-const LockIconContainer = styled.div`
-  position: inherit;
-  padding-top: 72px;
-  padding-bottom: 15px;
-
-  .roundIcon {
-    background-color: #e10050;
-    border-radius: 100%;
-    display: block;
-    width: 40px;
-    height: 40px;
-    margin: 0 auto;
-  }
-`;
-
-const AuthHeader = styled.h1`
-  padding: 0;
-  margin: 0 0 20px 0;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 18px;
-`;
-
 const CSSTypography = withStyles({
   root: {
     display: "block",
@@ -75,16 +38,6 @@ const CSSLink = withStyles({
     }
   }
 })(Link);
-
-const Copyright = styled.p`
-  margin-top: 66px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: 0.16px;
-  color: rgba(0, 0, 0, 0.54);
-`;
 
 // Типы данных
 interface IProps {

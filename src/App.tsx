@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import "./App.css";
-import AuthForm from "./containers/AuthForm";
+import AuthForm from "./containers/AuthForm/AuthForm";
 import NextPage from "./containers/NextPage";
 
 const App = () => {
