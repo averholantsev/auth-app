@@ -1,23 +1,9 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import { connect } from "react-redux";
 
+import { Container } from "./AuthForm/AuthFormStyles";
 import CSSAlert from "../components/AuthComponents/AuthAlert";
 import AuthButton from "../components/AuthComponents/AuthButton";
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  margin-top: 10%;
-  padding: 0 28px;
-
-  @media (min-width: 390px) {
-    width: 380px;
-    padding: 0;
-    margin-top: 5%;
-  }
-`;
 
 interface IProps {
   jwt?: string;
