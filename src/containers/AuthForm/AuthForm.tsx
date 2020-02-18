@@ -110,16 +110,18 @@ class AuthForm extends Component<IProps, IState> {
     this.setState({ rememberMe: !checkbox });
   };
 
-  //Проверка валидности формы
-  formValidate = (): void => {
+  //Функция для отправки данных формы
+  formSenderHandler = (): void => {
     const dataToServer = {
       email: this.state.email,
       password: this.state.password,
       rememberMe: this.state.rememberMe
     };
 
+    //Проверка на заполненные поля
     if (this.state.validateFields.email && this.state.validateFields.password) {
       this.setState({ willSend: true });
+      //Отправка POST запроса на backend
       axios
         .post("/314145ed-4ccd-46fd-a1f9-f5b83468e714", dataToServer)
         .then(response => {
@@ -199,7 +201,7 @@ class AuthForm extends Component<IProps, IState> {
             onChange={this.checkboxHandler}
             checked={this.state.rememberMe}
           />
-          <AuthButton onClick={this.formValidate}>Войти в аккаунт</AuthButton>
+          <AuthButton onClick={this.formSenderHandler}>Войти в аккаунт</AuthButton>
           <LinkContainer>
             <LeftLink key="remember" className="remember" href="/#">
               Забыли пароль?
