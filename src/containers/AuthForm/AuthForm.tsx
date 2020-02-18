@@ -1,43 +1,22 @@
 import React, { Component } from "react";
-import { Typography, Link } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
 import { connect } from "react-redux";
 
 import axios from "../../axios-main";
-import { Container, LockIconContainer, AuthHeader, Copyright } from './AuthFormStyles'
+import {
+  Container,
+  LockIconContainer,
+  AuthHeader,
+  LinkContainer,
+  LeftLink,
+  RightLink,
+  Copyright
+} from "./AuthFormStyles";
 import lockIcon from "../../components/UI/Icons/icon.svg";
 import AuthInput from "../../components/AuthComponents/AuthInput";
 import AuthButton from "../../components/AuthComponents/AuthButton";
 import AuthCheckbox from "../../components/AuthComponents/AuthCheckbox";
 import CSSAlert from "../../components/AuthComponents/AuthAlert";
 import { JWT_AUTH } from "../../store/reducer";
-
-// Стили
-const CSSTypography = withStyles({
-  root: {
-    display: "block",
-    "& .remember": {
-      float: "left"
-    },
-    "& .register": {
-      float: "right",
-      "@media (max-width: 389px)": {
-        width: "125px",
-        textAlign: "right"
-      }
-    }
-  }
-})(Typography);
-
-const CSSLink = withStyles({
-  root: {
-    color: "#2F80ED",
-    fontSize: "14px",
-    "&:hover": {
-      textDecoration: "underline"
-    }
-  }
-})(Link);
 
 // Типы данных
 interface IProps {
@@ -218,14 +197,14 @@ class AuthForm extends Component<IProps, IState> {
             checked={this.state.rememberMe}
           />
           <AuthButton onClick={this.formValidate}>Войти в аккаунт</AuthButton>
-          <CSSTypography>
-            <CSSLink key="remember" className="remember" href="/#">
+          <LinkContainer>
+            <LeftLink key="remember" className="remember" href="/#">
               Забыли пароль?
-            </CSSLink>
-            <CSSLink key="register" className="register" href="/#">
+            </LeftLink>
+            <RightLink key="register" className="register" href="/#">
               Ещё нет аккаунта? Регистрация
-            </CSSLink>
-          </CSSTypography>
+            </RightLink>
+          </LinkContainer>
           <Copyright>Copyright© Ваш сайт 2019.</Copyright>
         </form>
       </Container>

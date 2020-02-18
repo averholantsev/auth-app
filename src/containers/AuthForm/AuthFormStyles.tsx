@@ -37,6 +37,33 @@ export const AuthHeader = styled.h1`
   line-height: 18px;
 `;
 
+export const LinkContainer = styled.div`
+  display: block;
+`;
+
+const Link = styled.a`
+  color: #2f80ed;
+  font-size: 14px;
+  text-decoration: none;
+
+  :hover {
+    text-decoration: underline;
+  }
+`;
+
+export const LeftLink = styled(Link)`
+  float: left;
+`;
+
+export const RightLink = styled(Link)`
+  float: right;
+
+  @media (max-width: 389px) {
+    width: 125px;
+    text-align: right;
+  }
+`;
+
 export const Copyright = styled.p`
   margin-top: 66px;
   font-style: normal;
