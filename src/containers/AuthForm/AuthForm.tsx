@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Helmet from "react-helmet";
 
 import axios from "../../axios-main";
 import {
@@ -161,6 +162,9 @@ class AuthForm extends Component<IProps, IState> {
 
     return (
       <Container>
+        <Helmet>
+          <title>Вход в аккаунт</title>
+        </Helmet>
         <form>
           <LockIconContainer>
             <RoundIcon>
