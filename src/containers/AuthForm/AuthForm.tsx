@@ -14,6 +14,7 @@ import {
 } from "./AuthFormStyles";
 import lockIcon from "../../components/UI/Icons/icon.svg";
 import AuthInput from "../../components/AuthComponents/AuthInput";
+import AuthInputPassword from "../../components/AuthComponents/AuthInputPassword";
 import AuthButton from "../../components/AuthComponents/AuthButton";
 import AuthCheckbox from "../../components/AuthComponents/AuthCheckbox";
 import CSSAlert from "../../components/AuthComponents/AuthAlert";
@@ -182,10 +183,9 @@ class AuthForm extends Component<IProps, IState> {
             onChange={this.inputHandler}
             value={this.state.email}
           />
-          <AuthInput
+          <AuthInputPassword
             key="password"
             id="password"
-            type="password"
             label="Пароль"
             name="password"
             error={passwordError}
