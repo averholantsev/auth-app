@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/auth-app/static/css/main.bc2643f6.chunk.css",
-    "main.js": "/auth-app/static/js/main.a713d403.chunk.js",
-    "main.js.map": "/auth-app/static/js/main.a713d403.chunk.js.map",
+    "main.js": "/auth-app/static/js/main.a9856f9a.chunk.js",
+    "main.js.map": "/auth-app/static/js/main.a9856f9a.chunk.js.map",
     "runtime-main.js": "/auth-app/static/js/runtime-main.3ec2ff6f.js",
     "runtime-main.js.map": "/auth-app/static/js/runtime-main.3ec2ff6f.js.map",
-    "static/js/2.1c4b129f.chunk.js": "/auth-app/static/js/2.1c4b129f.chunk.js",
-    "static/js/2.1c4b129f.chunk.js.map": "/auth-app/static/js/2.1c4b129f.chunk.js.map",
+    "static/js/2.f029310f.chunk.js": "/auth-app/static/js/2.f029310f.chunk.js",
+    "static/js/2.f029310f.chunk.js.map": "/auth-app/static/js/2.f029310f.chunk.js.map",
     "index.html": "/auth-app/index.html",
-    "precache-manifest.34a504fb6bf15ccd9a55584a1edd4df2.js": "/auth-app/precache-manifest.34a504fb6bf15ccd9a55584a1edd4df2.js",
+    "precache-manifest.a8fd2ddc03ec04c3ce845465c79958aa.js": "/auth-app/precache-manifest.a8fd2ddc03ec04c3ce845465c79958aa.js",
     "service-worker.js": "/auth-app/service-worker.js",
     "static/css/main.bc2643f6.chunk.css.map": "/auth-app/static/css/main.bc2643f6.chunk.css.map",
-    "static/js/2.1c4b129f.chunk.js.LICENSE.txt": "/auth-app/static/js/2.1c4b129f.chunk.js.LICENSE.txt",
+    "static/js/2.f029310f.chunk.js.LICENSE.txt": "/auth-app/static/js/2.f029310f.chunk.js.LICENSE.txt",
     "static/media/icon.svg": "/auth-app/static/media/icon.9ffdbb2e.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.3ec2ff6f.js",
-    "static/js/2.1c4b129f.chunk.js",
+    "static/js/2.f029310f.chunk.js",
     "static/css/main.bc2643f6.chunk.css",
-    "static/js/main.a713d403.chunk.js"
+    "static/js/main.a9856f9a.chunk.js"
   ]
 }
