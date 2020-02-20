@@ -13,7 +13,7 @@ import {
   RightLink,
   Copyright
 } from "./AuthFormStyles";
-import lockIcon from "../../components/UI/Icons/icon.svg";
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import AuthInput from "../../components/AuthComponents/AuthInput";
 import AuthInputPassword from "../../components/AuthComponents/AuthInputPassword";
 import AuthButton from "../../components/AuthComponents/AuthButton";
@@ -168,7 +168,7 @@ class AuthForm extends Component<IProps, IState> {
         <form>
           <LockIconContainer>
             <RoundIcon>
-              <img src={lockIcon} alt="auth-lock" />
+              <LockOutlinedIcon />
             </RoundIcon>
           </LockIconContainer>
           <AuthHeader>Вход в аккаунт</AuthHeader>
