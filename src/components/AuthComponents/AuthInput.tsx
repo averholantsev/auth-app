@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     input: {
       "&:-webkit-autofill": {
-        WebkitBoxShadow: "0 0 0 30px white inset !important",
+        WebkitBoxShadow: "0 0 0 30px white inset !important"
       }
     }
   })

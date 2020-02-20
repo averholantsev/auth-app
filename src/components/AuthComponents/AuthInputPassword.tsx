@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     input: {
       "&:-webkit-autofill": {
-        WebkitBoxShadow: "0 0 0 30px white inset !important",
+        WebkitBoxShadow: "0 0 0 30px white inset !important"
       }
     }
   })
@@ -57,7 +57,7 @@ const AuthInputPassword = (props: any) => {
       className={classes.root}
       variant="outlined"
       type={state.showPassword ? "text" : "password"}
-      inputProps={{className: classes.input}}
+      inputProps={{ className: classes.input }}
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">
