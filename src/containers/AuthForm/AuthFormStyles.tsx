@@ -27,6 +27,11 @@ export const RoundIcon = styled.div`
   width: 40px;
   height: 40px;
   margin: 0 auto;
+  & svg{
+    padding: 8px;
+    font-size: 24px;
+    color: white;
+  }
 `;
 
 export const AuthHeader = styled.h1`
