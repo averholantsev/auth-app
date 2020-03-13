@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Helmet from "react-helmet";
 
-import axios from "../../axios-main";
 import {
   Container,
   LockIconContainer,
@@ -13,17 +12,21 @@ import {
   RightLink,
   Copyright
 } from "./AuthFormStyles";
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import AuthInput from "../../components/AuthComponents/AuthInput";
 import AuthInputPassword from "../../components/AuthComponents/AuthInputPassword";
 import AuthButton from "../../components/AuthComponents/AuthButton";
 import AuthCheckbox from "../../components/AuthComponents/AuthCheckbox";
 import CSSAlert from "../../components/AuthComponents/AuthAlert";
-import { JWT_AUTH } from "../../store/reducer";
+import { auth } from "../../store/actions";
+import { Redirect } from "react-router-dom";
 
 // Типы данных
 interface IProps {
-  onAuthAccepted: (id: string) => void;
+  onAuth: (email: string, password: string, rememberMe: boolean) => void;
+  isAuth: boolean;
+  resError: boolean;
+  errorMessage: string;
   history: any;
 }
 
@@ -62,9 +65,7 @@ class AuthForm extends Component<IProps, IState> {
       email: "Обязательное поле!",
       password: "Обязательное поле!"
     },
-    willSend: true,
-    resError: false,
-    errorMessage: ""
+    willSend: true
   };
 
   //Функция для обновления состояния полей ввода
@@ -115,36 +116,15 @@ class AuthForm extends Component<IProps, IState> {
 
   //Функция для отправки данных формы
   formSenderHandler = (): void => {
-    const dataToServer = {
-      email: this.state.email,
-      password: this.state.password,
-      rememberMe: this.state.rememberMe
-    };
-
     //Проверка на заполненные поля
     if (this.state.validateFields.email && this.state.validateFields.password) {
       this.setState({ willSend: true });
       //Отправка POST запроса на backend
-      axios
-        .post("/314145ed-4ccd-46fd-a1f9-f5b83468e714", dataToServer)
-        .then(response => {
-          this.props.onAuthAccepted(response.data.jwt);
-          this.props.history.push("/auth-app/next-page");
-        })
-        .catch(error => {
-          if (error.response.status === 401) {
-            this.setState({
-              resError: true,
-              errorMessage:
-                "Ошибка авторизации, проверьте данные и повторите попытку"
-            });
-          } else
-            this.setState({
-              resError: true,
-              errorMessage:
-                "Произошла ошибка, попробуйте повторите попытку позднее"
-            });
-        });
+      this.props.onAuth(
+        this.state.email,
+        this.state.password,
+        this.state.rememberMe
+      );
     } else {
       this.setState({ willSend: false });
     }
@@ -160,8 +140,14 @@ class AuthForm extends Component<IProps, IState> {
       passwordError = !this.state.validateFields.password;
     }
 
+    let authRedirect = null;
+    if (this.props.isAuth) {
+      authRedirect = <Redirect to="/auth-app/next-page" />;
+    }
+
     return (
       <Container>
+        {authRedirect}
         <Helmet>
           <title>Вход в аккаунт</title>
         </Helmet>
@@ -172,8 +158,8 @@ class AuthForm extends Component<IProps, IState> {
             </RoundIcon>
           </LockIconContainer>
           <AuthHeader>Вход в аккаунт</AuthHeader>
-          {this.state.resError ? (
-            <CSSAlert severity="error">{this.state.errorMessage}</CSSAlert>
+          {this.props.resError ? (
+            <CSSAlert severity="error">{this.props.errorMessage}</CSSAlert>
           ) : null}
           <AuthInput
             key="email"
@@ -221,10 +207,19 @@ class AuthForm extends Component<IProps, IState> {
 }
 
 //Использование Redux
-const mapDispatchToProps = (dispatch: any) => {
+const mapStateToProps = (state: any) => {
   return {
-    onAuthAccepted: (id: string) => dispatch({ type: JWT_AUTH, jwt: id })
+    isAuth: state.jwt !== null,
+    resError: state.resError,
+    errorMessage: state.errorMessage
   };
 };
 
-export default connect(null, mapDispatchToProps)(AuthForm);
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    onAuth: (email: string, password: string, rememberMe: boolean) =>
+      dispatch(auth(email, password, rememberMe))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AuthForm);

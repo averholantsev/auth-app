@@ -9,14 +9,9 @@ import AuthButton from "../components/AuthComponents/AuthButton";
 
 interface IProps {
   jwt?: string;
-  history?: any;
 }
 
 class NextPage extends Component<IProps> {
-  backToAuthPage = () => {
-    this.props.history.goBack();
-  };
-
   render() {
     return (
       <Container>
@@ -26,7 +21,7 @@ class NextPage extends Component<IProps> {
         <CSSAlert>
           Авторизация прошла успешна, ваш jwt: {this.props.jwt}
         </CSSAlert>
-        <AuthButton onClick={this.backToAuthPage}>Назад</AuthButton>
+        <AuthButton href="/auth-app/" >Назад</AuthButton>
       </Container>
     );
   }
