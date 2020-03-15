@@ -33,3 +33,9 @@ export const auth = (email: string, password: string, rememberMe: boolean) => {
       });
   };
 };
+
+export const authLogout = () => {
+  return {
+    type: actionTypes.AUTH_LOGOUT
+  };
+};

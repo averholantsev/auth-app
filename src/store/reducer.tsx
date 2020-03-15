@@ -28,12 +28,21 @@ const authFail = (state: any, action: any) => {
   };
 };
 
+const authLogout = (state: any) => {
+  return {
+    ...state,
+    jwt: null
+  };
+};
+
 const reduser = (state = initialState, action: any) => {
   switch (action.type) {
     case actionTypes.AUTH_SUCCESS:
       return authSuccess(state, action);
     case actionTypes.AUTH_FAIL:
       return authFail(state, action);
+    case actionTypes.AUTH_LOGOUT:
+      return authLogout(state);
     default:
       return state;
   }
